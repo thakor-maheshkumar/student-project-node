@@ -1,0 +1,33 @@
+
+
+<div class="container">
+    <a class="btn btn-primary" routerLinkActive="active" routerLink="/department-add" >Add Department</a>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h2 class="h2">Department</h2>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Head</th>
+            <th class="text-center" scope="col">Action</th>
+          </tr>
+          <tr *ngFor="let department of Department;let i=index">
+              <td>{{i}}</td>
+              <td>{{department.department}}</td>
+              <td>{{department.teacher.name}}</td>
+              <td>
+                 <a href="" class="btn btn-primary" routerLink="/department-edit/{{department._id}}">Edit</a>
+                 <button class="btn btn-danger" (click)="onDelete(department._id,i)">Delete</button>
+              </td>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  

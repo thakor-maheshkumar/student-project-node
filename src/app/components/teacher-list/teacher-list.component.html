@@ -1,0 +1,36 @@
+
+<div class="container">
+    <a class="btn btn-primary" routerLinkActive="active" routerLink="/teacher-add" >Add Teacher</a>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h2 class="h2">Teacher List</h2>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Degree</th>
+            <th scope="col">Address</th>
+            <th class="text-center" scope="col">Action</th>
+          </tr>
+          <tr *ngFor="let teacher of Teachers; let i=index">
+                <td>{{i+1}}</td>
+                <td>{{teacher.name}}</td>
+                <td>{{teacher.age}}</td>
+                <td>{{teacher.degree}}</td>
+                <td>{{teacher.address}}</td>
+                <td>
+                    <a href="" class="btn btn-primary" routerLink="/teacher-edit/{{teacher._id}}">Edit</a>
+                    <button class="btn btn-danger" (click)="onDelete(teacher._id,i)" >Delete</button>
+                </td>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  

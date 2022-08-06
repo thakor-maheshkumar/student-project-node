@@ -1,0 +1,35 @@
+ 
+
+<div class="container">
+    <a class="btn btn-primary" routerLinkActive="active" routerLink="/student-add" >Add Student</a>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h2 class="h2">Student List</h2>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Roll No</th>
+            <th scope="col">Address</th>
+            <th class="text-center" scope="col">Action</th>
+          </tr>
+          <tr *ngFor="let student of Students; let i=index">
+              <td>{{student._id}}</td>
+              <td>{{student.name}}</td>
+              <td>{{student.rollno}}</td>
+              <td>{{student.address}}</td>
+              <td>
+                  <a  class="btn btn-info" routerLink="/student-detail/{{student._id}}">Edit</a>
+                  <button class="btn btn-danger" (click)="delete(student._id,i)">Delete</button>
+              </td>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  
